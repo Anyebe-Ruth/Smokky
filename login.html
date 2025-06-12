@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
+    
+   
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+</head>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+
+}
+
+.phone-screen {
+  width: 375px;
+  height: 812px;
+  border-radius: 30px;
+  overflow: hidden;
+  background: #111;
+  box-shadow: 0 0 20px rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+}
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: #111;
+  color: #999;
+}
+
+.balance-section {
+  padding: 20px;
+  background: linear-gradient(to top right, #0a0f1f, purple);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.balance-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-icon {
+  font-size: 20px;
+}
+
+.account-btn {
+  background: mediumorchid;
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 10px;
+}
+
+.balance-amount {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 15px 0 5px;
+}
+
+.balance-note {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.actions button {
+  padding: 10px 16px;
+  background-color: #2a3d4e;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.transactions {
+  flex: 1;
+  padding: 20px;
+}
+
+.transactions h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.transaction .details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.transaction .icon {
+  width: 40px;
+  height: 40px;
+  background: #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transaction .amount {
+  font-weight: bold;
+}
+
+.transaction .amount.credit {
+  color: #4caf50;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* adds spacing on edges */
+  border-top: 1px solid gray;
+}
+
+.footer-item {
+  color: white;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.footer-item:focus {
+  outline: none;
+}
+
+
+
+
+
+
+
+</style>
+
+<body>
+  
+
+ 
+  <div class="phone-screen">
+    <header>
+      <div class="status-bar">
+        
+        <div class="indicators">
+          <span class="signal"></span>
+          <span class="wifi"></span>
+          <span class="battery"></span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="balance-section">
+        <div class="balance-top">
+          
+          
+          
+       <!-- 👤 User Icon and Name -->
+<div class="user-icon" style="display: flex; align-items: center; gap: 8px; margin: 10px; justify-content: flex-end;">
+  <i class="bi bi-person-circle fs-2" style="color: mediumorchid;"></i>
+  <span id="displayUserName" style="color: white; font-weight: 500;"></span>
+</div>
+          
+          
+          
+          
+          
+          
+          <button class="account-btn">
+            <i class="bi bi-briefcase"></i> Account</button>
+        </div>
+        <div class="balance-amount">$3,456.88</div>
+        <div class="balance-note">Saved this month: $482</div>
+
+        <div class="actions">
+          <button>Top up</button>
+          <button>Send</button>
+          <button>Other</button>
+        </div>
+      </section>
+
+      <section class="transactions">
+        <h2>Transaction</h2>
+        <div class="transaction">
+          <div class="details">
+            <div class="icon amazon"><i class="bi bi-cart4 fs-1"></i></div>
+            <div>
+              <p>Amazon</p>
+              <span>11:45 AM</span>
+            </div>
+          </div>
+          <div class="amount">-$76.99</div>
+        </div>
+
+        <div class="transaction">
+          <div class="details">
+            <div class="icon paypal"><i class="bi bi-briefcase fs-1"></i></div>
+            <div>
+              <p>PayPal</p>
+              <span>+$150.00</span>
+            </div>
+          </div>
+          <div class="amount credit">+$150.00</div>
+        </div>
+
+        <div class="transaction">
+          <div class="details">
+            <div class="icon mcd fs-1">
+              <i class="bi bi-cake2 fs-2" ></i></div>
+            <div>
+              <p>McDonald's</p>
+              <span>9:30 AM</span>
+            </div>
+          </div>
+          <div class="amount">-$8.75</div>
+        </div>
+      </section>
+    </main>
+
+
+  </div>
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+  
+
+     
+  <footer class="footer">
+  <button class="footer-item left"><i class="bi bi-house-add-fill fs-1"></i></button>
+  <button class="footer-item center"><i class="bi bi-currency-dollar fs-1"></i></button>
+  <button class="footer-item right"><i class="bi bi-gear-fill fs-1"></i></button>
+</footer>
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <script>
+  window.addEventListener("DOMContentLoaded", function () {
+    const displayName = localStorage.getItem("loggedInUser");
+    const displayUserName = document.getElementById("displayUserName");
+
+    if (displayUserName && displayName) {
+      displayUserName.textContent = displayName;
+    }
+  });
+</script>
+ 
+ 
+ 
+ 
+  
+  
+  
+  
+    <script src="./script.js"></script>
+   
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script> 
+</body>
+
+</html>

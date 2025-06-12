@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    
+    <link defer href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    
+  </head>
+  <body>
+  
+     <div class="login-container">
+<h2>Zonify</h2>
+<form id="loginForm" novalidate>
+  <div class="form-group">
+    <label for="userName" style="color: white;">User Name</label>
+    <input type="text" id="userName" name="userName" placeholder="Enter your user name" required />
+  </div>
+  <div class="form-group">
+    <label for="password" style="color: white;">Password </label>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required />
+  </div>
+  
+  <div id="errorMessage" style="color: mediumpurple; display: none; margin-top: 10px; margin-bottom: 10px;"></div>
+  
+  
+  <button type="submit" class="login-btn" id="login">Login</button>
+  <div class="forgot-link">
+    <a href="">Forgot Password?</a>
+  </div>
+</form>
+
+<div class="link-row">
+  <a href="login.html"></a></div>
+  
+</div>
+
+
+
+
+
+
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const userName = document.getElementById("userName").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const errorMessage = document.getElementById("errorMessage");
+
+    if (!userName || !password) {
+      errorMessage.textContent = "Both fields are required.";
+      errorMessage.style.display = "block";
+      return;
+    }
+
+    if (password.length < 6) {
+      errorMessage.textContent = "Password should not be less than 6 characters.";
+      errorMessage.style.display = "block";
+      return;
+    }
+
+    // Clear error
+    errorMessage.textContent = "";
+    errorMessage.style.display = "none";
+
+    // Save username and redirect
+    localStorage.setItem("loggedInUser", userName);
+    window.location.href = "login.html";
+  });
+</script>   
+
+
+
+
+   
+   
+   
+   <script src="./script.js"></script>
+   
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  </body>
+</html>

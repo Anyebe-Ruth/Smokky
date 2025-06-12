@@ -1,0 +1,87 @@
+body {
+      margin: 0;
+      
+    
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      
+  
+  padding: 0;
+  
+  background: linear-gradient(135deg, #6a0dad, #000000); /* Purple to black */
+  color: white;
+  font-family: Arial, sans-serif;
+  
+  
+
+
+    }
+
+    .login-container {
+      background: black;
+      padding: 40px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      color: mediumpurple; /* Zenith red */
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background: mediumpurple; /* Zenith red */
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background: mediumpurple;
+    }
+
+    .forgot-link {
+      text-align: right;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .forgot-link a {
+      color: mediumpurple;
+      text-decoration: none;
+    }
+
+    .forgot-link a:hover {
+      text-decoration: underline;
+    }
+
+
+
